@@ -1,0 +1,23 @@
+{
+  "name": "cloud-computing-tutorial1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonaN-tech/cloud-tutorial1-jona.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonaN-tech/cloud-tutorial1-jona/issues"
+  },
+  "homepage": "https://github.com/JonaN-tech/cloud-tutorial1-jona#readme",
+  "dependencies": {
+    "supabase": "^2.67.2"
+  }
+}
