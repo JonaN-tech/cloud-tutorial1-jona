@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cloud To-Do App</title>
+  <style>
+    body { font-family: Arial; max-width:600px; margin:40px auto; }
+    input { padding:10px; width:70%; }
+    button { padding:10px; }
+    li { margin:6px 0; }
+  </style>
+</head>
+<body>
+
+<h1>Cloud To-Do App</h1>
+
+<input id="text" placeholder="New task..." />
+<button onclick="addTodo()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+const API = "/api/todos";
+
+async function loadTodos() {
+  const res = await fetch(API);
+  const data = await res.json();
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+  data.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item.text;
+    list.appendChild(li);
+  });
+}
+
+async function addTodo() {
+  const text = document.getElementById("text").value;
+  await fetch(API, {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ text })
+  });
+  document.getElementById("text").value = "";
+  loadTodos();
+}
+
+loadTodos();
+</script>
+
+</body>
+</html>
