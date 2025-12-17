@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/JonaN-tech/cloud-tutorial1-jona#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^2.88.0",
     "supabase": "^2.67.2"
   }
 }
